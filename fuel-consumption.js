@@ -16,12 +16,13 @@ export default function FuelConsumption(db) {
                 message: "regNumber should not be blank"
             }
         }
-        if (!regNumber && !description) {
-            return {
-                status: "error",
-                message: "description and regNumber should not be blank"
-            }
-        }
+        
+        // if (!regNumber && !description) {
+        //     return {
+        //         status: "error",
+        //         message: "description and regNumber should not be blank"
+        //     }
+        // }
 
         const regex = /^(CA|CY|CF|CAA) \d{3}-\d{3}$/;
         if (!regex.test(regNumber)) {

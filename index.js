@@ -81,7 +81,7 @@ app.post('/add', add_car.post_add_car);
 
 //get and post routes for refueling car
 app.get('/refuel', refuel_car.get_refuel);
-app.post('/refuel', refuel_car.post_refuel);
+app.post('/refuel/', refuel_car.post_refuel);
 
   
 // Start the server
