@@ -1,4 +1,16 @@
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+</style>
+
 <div class="container">
+    <br>
+    <br>
     <h2>Refuel Vehicle</h2>
         {{!-- flash messages --}}
     <p style="color: green;" class="green">{{messages.success}}</p>
@@ -23,7 +35,7 @@
         <label for="filled_up">Full Tank refil</label>
         <input type="checkbox" id="filled_up" name="filled_up" value=""><br><br>
 
-     <button type="submit" class="btn btn-primary">Refuel</button>
+     <button type="submit" class="btn btn-primary" style="background-color: rgb(18, 69, 69); border-color:rgb(18, 69, 69);">Refuel</button>
     </form>
          <span><a href="/">Click to see added cars</a></span>  <span><a href="/add">Click here to add a vehicle</a></span>
 </div>

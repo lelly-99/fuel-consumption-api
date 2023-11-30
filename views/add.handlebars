@@ -2,6 +2,12 @@
     span {
         margin: 20px;
     }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 </style>
 <div class="container">
     <h1>Add New Vehicle</h1>
@@ -19,10 +25,10 @@
             <input type="text" name="regNumber" placeholder="Enter Registration Number">
             <br>
             <br>
-        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+        <button type="submit" class="btn btn-primary" style="background-color: rgb(18, 69, 69); border-color:rgb(18, 69, 69);">Add Vehicle</button>
     </form>
     <br>
-         <a href="/">Click here to see added cars</a>
+       <span><a href="/">Click to see added cars</a></span>  <span><a href="/refuel">Click here to refuel vehicle</a></span>
 </div>
 {{!-- script for messages to dissapear are 3 seconds --}}
 <script>
