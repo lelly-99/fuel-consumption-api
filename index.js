@@ -1,6 +1,4 @@
-
-import FuelConsumption from './fuel-consumption.js';
-import all from "./routes/vehicles.js";
+//import modules
 import 'dotenv/config';
 import express from "express";
 import { engine } from "express-handlebars";
@@ -8,7 +6,14 @@ import bodyParser from "body-parser";
 import flash from "connect-flash";
 import session from "express-session";
 import pgPromise from "pg-promise";
+
+//routes
 import add from './routes/add.js';
+import refuel from './routes/refuel.js';
+import all from "./routes/vehicles.js";
+
+//database queries
+import FuelConsumption from './fuel-consumption.js';
 
 
 //pg promise
@@ -33,6 +38,7 @@ const database_instance = FuelConsumption(database);
 //route instances
 const home_route = all(database_instance)
 const add_car = add(database_instance)
+const refuel_car = refuel(database_instance)
 
 const app = express();
 
@@ -65,8 +71,17 @@ app.use(function (req, res, next) {
 
 
 //routes
+
+//home route for all vehicles
 app.get('/', home_route.list_of_vehicles);
-app.get('/addCar', home_route.list_of_vehicles);
+
+//get and post routes for adding car
+app.get('/add', add_car.get_add_car);
+app.post('/add', add_car.post_add_car);
+
+//get and post routes for refueling car
+app.get('/refuel', refuel_car.get_refuel);
+app.post('/refuel', refuel_car.post_refuel);
 
   
 // Start the server

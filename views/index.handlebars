@@ -16,11 +16,15 @@
 </style>
 <div class="container">
     <h1 style="text-align: center;">Vehicles</h1>
+     <a href="/add">Click here to add a car</a>
+     <br>
+     <br>
     <div class="row">
+      {{!-- show all added vehicles --}}
         {{#each all_vehicles}}
         <div class="col-md-4 mb-3">
             <div class="vehicle border rounded p-3">
-                <ul class="list-unstyled">
+                <ul>
                     <li>
                         <p>Description: {{this.description}}</p>
                         <p>Registration Number: {{this.reg_number}}</p>

@@ -3,7 +3,7 @@ export default function add(database_instance) {
     async function get_add_car(req, res) {
       try {
         //render screen
-        res.render("addCar");
+        res.render("add");
       } catch (err) {
         console.error("Error", err);
       }
@@ -12,9 +12,18 @@ export default function add(database_instance) {
     async function post_add_car(req, res) {
       try {
        //require body of html - reg number and description
-       const {regNumber, description} = reg.body
-       
-        res.redirect("/addCar");
+      const {description, regNumber} = req.body
+      //database function to insert description and registration
+      const add = await database_instance.addVehicle({description, regNumber})
+      if (add.status === "error") {
+        // If status is error, flash error message
+        req.flash('error', add.message);
+    } else {
+        // If status is success, set flash success message
+        req.flash('success', 'Vehicle added successfully');
+    }
+    //redirect to the add page
+        res.redirect("/add");
       } catch (err) {
         console.error("Error", err);
       }

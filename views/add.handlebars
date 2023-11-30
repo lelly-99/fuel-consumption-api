@@ -1,0 +1,34 @@
+<style>
+    div {
+        margin: 150px;
+    }
+</style>
+
+<div class="container">
+    <h1>Add New Vehicle</h1>
+      {{!-- flash messages --}}
+    <p style="color: green;" class="green">{{messages.success}}</p>
+    <p style="color: red;" class="red">{{messages.error}}</p>
+    <br>
+
+    <form action="/add" method="POST">
+            <label for="description">Description</label>
+            <input type="text" name="description"  placeholder="Enter Description">
+            <br>
+            <br>
+            <label for="regNumber">Registration Number</label>
+            <input type="text" name="regNumber" placeholder="Enter Registration Number">
+            <br>
+            <br>
+        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+    </form>
+    <br>
+         <a href="/">Click here to see added cars</a>
+</div>
+{{!-- script for messages to dissapear are 3 seconds --}}
+<script>
+  setTimeout(function () { document.querySelector('.red').innerHTML = ''; },
+  3000);
+   setTimeout(function () { document.querySelector('.green').innerHTML = ''; },
+  3000);
+</script> 
