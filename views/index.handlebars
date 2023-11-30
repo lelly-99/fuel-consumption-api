@@ -1,0 +1,43 @@
+<style>
+  .space {
+    margin-right: 50px;
+  }
+  a{
+   text-align: center;
+  }
+  li {
+    list-style: none;
+  }
+  .vehicle {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: aquamarine;
+  }
+</style>
+<div class="container">
+    <h1 style="text-align: center;">Vehicles</h1>
+    <div class="row">
+        {{#each all_vehicles}}
+        <div class="col-md-4 mb-3">
+            <div class="vehicle border rounded p-3">
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Description: {{this.description}}</p>
+                        <p>Registration Number: {{this.reg_number}}</p>
+                        <p>Total Liters: {{this.total_liters}}</p>
+                        <p>Total Amount: {{this.total_amount}}</p>
+                        <p>Total Distance: {{this.total_distance}}</p>
+                        <p>Fuel Consumption: {{this.fuel_consumption}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+
+  
+  
+  
