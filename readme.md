@@ -1,5 +1,7 @@
 # Fuel consumption API
 
+[![Node.js CI](https://github.com/lelly-99/fuel-consumption-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/lelly-99/fuel-consumption-api/actions/workflows/node.js.yml)
+
 [Prototype](https://www.figma.com/file/HLe07yq1sxySt4Gp5FvSax/Untitled?type=design&node-id=0%3A1&mode=design&t=jfys5PIjdsLTzqiT-1)
 
 The fuel consumption API keeps track of vehicle fuel usage.
